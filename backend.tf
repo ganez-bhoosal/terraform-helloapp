@@ -3,5 +3,6 @@ terraform {
     bucket = "terraform-ganesh123"
     key    = "terraform/dev/helloapp"
     region = "us-east-1"
+    profile = "ganesh"
   }
 }
