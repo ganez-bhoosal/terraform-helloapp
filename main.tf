@@ -6,12 +6,14 @@ resource "aws_launch_configuration" "default" {
   security_groups = ["${aws_security_group.default.id}"]
   iam_instance_profile = "${aws_iam_instance_profile.default.name}"
   user_data = "${data.template_file.default.rendered}"
+  
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 data "template_file" "default" {
   template = "${file("script/user-data.sh")}"
   
-  lifecycle {
-    create_before_destroy = true
-  }
+  
 }
