@@ -3,7 +3,7 @@
 pip install awscli
 
 # this will display and set the bucket name
-myBucket=springboot-restapp-mysql-ganesh
+myBucket=ganesh-helloapp
 
 #this will find the app and run the app
 aws s3 ls s3://$myBucket |awk '{print $4}'
