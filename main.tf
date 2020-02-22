@@ -10,4 +10,8 @@ resource "aws_launch_configuration" "default" {
 
 data "template_file" "default" {
   template = "${file("script/user-data.sh")}"
+  
+  lifecycle {
+    create_before_destroy = true
+  }
 }
